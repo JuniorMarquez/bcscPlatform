@@ -1,0 +1,91 @@
+
+      <script type="text/ng-template" id="modalDepartamento.html">
+            <div ng-include="'tpl/modalDepartamento.html'"></div>
+          </script>
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false; 
+    app.settings.asideDock = false;
+  ">
+
+  <div class="col">
+
+    <div class="bg-light lter b-b wrapper-md" ng-controller="FlotChartDemoCtrl">
+
+      <div class="row">
+        <div class="col-sm-6 col-xs-12">
+          <h1 class="m-n font-thin h3 text-black">Panel de Control</h1>
+          <small class="text-muted">Bienvenido al panel de control</small>
+        </div>
+        <div class="col-sm-6 text-right hidden-xs">
+          <div class="inline m-r text-left">
+         
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <!-- / main header -->
+    <div class="wrapper-md" ng-controller="FlotChartDemoCtrl">
+      <!-- stats -->
+      <div class="row">
+        <div class="col-md-5">
+          <div class="row row-sm text-center">
+          <div class="col-xs-12 m-b-md">
+             <a ng-show="{{app.tipoEstablecimiento=='8'}}" ui-sref="apps.inventarioIngredientes" popover="Click para administrar el inventario" popover-trigger="mouseenter" popover-placement="bottom" ng-show="{{app.nivel == '1'}}">
+            
+              <div class="r bg-primary dker item hbox no-border">
+                <div class="col w-xs v-middle hidden-md">
+                  <div ng-init="data1=[60,40]" ui-jq="sparkline" ui-options="{{data1}}, {type:'pie', height:40, sliceColors:['{{app.color.warning}}','#fff']}" class="sparkline inline"></div>
+                </div>
+                <div class="col dk padder-v r-r" >
+                  <div class="text-light-dk font-thin h1"><span>{{total}} ingredientes </span></div>
+                  <span class="text-muted text-xs">Distribuidos en {{totalCategorias}} categorías</span>
+                </div>
+              </div>
+             </a> 
+             <a ng-show="{{app.tipoEstablecimiento=='1'}}"href ui-sref="apps.inventario" popover="Click para administrar el inventario" popover-trigger="mouseenter" popover-placement="bottom" ng-show="{{app.nivel == '1'}}">
+              <div class="r bg-primary dker item hbox no-border">
+                <div class="col w-xs v-middle hidden-md">
+                  <div ng-init="data1=[60,40]" ui-jq="sparkline" ui-options="{{data1}}, {type:'pie', height:40, sliceColors:['{{app.color.warning}}','#fff']}" class="sparkline inline"></div>
+                </div>
+                <div class="col dk padder-v r-r" >
+                  <div class="text-light-dk font-thin h1"><span>{{total}} Articulos </span></div>
+                  <span class="text-muted text-xs">Distribuidos en {{totalCategorias}} categorías</span>
+                </div>
+              </div>
+             </a> 
+            </div>
+            <div class="col-xs-6">
+            <div class="panel padder-v bg-light item">
+                <div class="h1 text-light-dk  font-thin h1">{{totalConsultores}}</div>
+                <span class="text-light-dk text-xs">Consultores</span>
+                <div class="top text-right w-full">
+
+                </div>
+              </div>
+             
+            </div>
+            <div class="col-xs-6">
+
+             <div class="panel padder-v item">
+                <div class="h1 text-info font-thin h1">{{totalClientes}}</div>
+                <span class="text-muted text-xs">Clientes</span>
+                <div class="top text-right w-full">
+                  <i class="fa fa-caret-down text-warning m-r-sm"></i>
+                </div>
+              </div>
+
+         
+            </div>
+          
+            
+          </div>
+        </div>
+       
+   
+      </div>
+    
+    </div>
+  </div>
+
+</div>
